@@ -1,3 +1,5 @@
+let sortedList = document.getElementById("lista-sorteio");
+let friendsList = document.getElementById("lista-amigos");
 let namesToSort = [];
 
 function friendsToSortOut() {
@@ -7,19 +9,20 @@ function friendsToSortOut() {
     return alert("Por favor, adicione um amigo!");
   } else {
     namesToSort.push(friendName.value);
+    friendsList.textContent = namesToSort;
     friendName.value = "";
   }
 }
 
-function includedFriends(tag, text) {
-  let gettingTag = document.getElementById(tag);
-  gettingTag.innerHTML = text;
-}
+// function includedFriends(tag, text) {
+//   let gettingTag = document.getElementById(tag);
+//   gettingTag.innerHTML = text;
+// }
 
-function addFriends() {
-  friendsToSortOut();
-  includedFriends("lista-amigos", namesToSort);
-}
+// function addFriends() {
+//   friendsToSortOut();
+//   includedFriends("lista-amigos", namesToSort);
+// }
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -32,13 +35,13 @@ function shuffle(array) {
 }
 
 function sortear() {
-  let shuffledArray = namesToSort;
+  let shuffledArray = shuffle(namesToSort);
   console.log(shuffledArray);
 }
 
 document.addEventListener("keydown", function (event) {
   if (event.key === 13 || event.key == "Enter") {
     event.preventDefault();
-    addFriends();
+    friendsToSortOut();
   }
 });
