@@ -21,16 +21,18 @@ function addFriends() {
   includedFriends("lista-amigos", namesToSort);
 }
 
-function sortOut() {
-  for (let i = namesToSort.length - 1; i > 0; i--) {
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
-    [namesToSort[i], namesToSort[j]] = [namesToSort[j], namesToSort[i]];
+    // Desestruturando um array, fazendo justamente a função de swap
+    // O array no index i se transforma no array de index j e vice-versa, trocando as posições
+    [array[i], array[j]] = [array[j], array[i]];
   }
-  return namesToSort;
+  return array;
 }
 
 function sortear() {
-  let shuffledArray = sortOut(namesToSort);
+  let shuffledArray = namesToSort;
   console.log(shuffledArray);
 }
 
