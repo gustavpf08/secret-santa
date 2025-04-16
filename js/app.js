@@ -14,16 +14,6 @@ function friendsToSortOut() {
   }
 }
 
-// function includedFriends(tag, text) {
-//   let gettingTag = document.getElementById(tag);
-//   gettingTag.innerHTML = text;
-// }
-
-// function addFriends() {
-//   friendsToSortOut();
-//   includedFriends("lista-amigos", namesToSort);
-// }
-
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));
@@ -37,6 +27,10 @@ function shuffle(array) {
 function sortear() {
   let shuffledArray = shuffle(namesToSort);
   console.log(shuffledArray);
+
+  for (let i = 0; i < namesToSort.length; i++) {
+    sortedList.innerHTML += `${namesToSort[i]} -> ${namesToSort[i + 1]} <br>`;
+  }
 }
 
 document.addEventListener("keydown", function (event) {
