@@ -27,13 +27,16 @@ function shuffle(array) {
 function sortOut() {
   let shuffledArray = shuffle(namesToSort);
 
-  sortedList.innerHTML = `${namesToSort[namesToSort.length - 1]} -> ${
-    namesToSort[0]
-  } <br>`;
-
   for (let i = 0; i < namesToSort.length - 1; i++) {
     sortedList.innerHTML += `${namesToSort[i]} -> ${namesToSort[i + 1]} <br>`;
   }
+  sortedList.innerHTML += `${namesToSort[namesToSort.length - 1]} -> ${
+    namesToSort[0]
+  } <br>`;
+}
+
+function restart() {
+  window.location.reload();
 }
 
 document.addEventListener("keydown", function (event) {
