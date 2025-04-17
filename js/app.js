@@ -24,11 +24,14 @@ function shuffle(array) {
   return array;
 }
 
-function sortear() {
+function sortOut() {
   let shuffledArray = shuffle(namesToSort);
-  console.log(shuffledArray);
 
-  for (let i = 0; i < namesToSort.length; i++) {
+  sortedList.innerHTML = `${namesToSort[namesToSort.length - 1]} -> ${
+    namesToSort[0]
+  } <br>`;
+
+  for (let i = 0; i < namesToSort.length - 1; i++) {
     sortedList.innerHTML += `${namesToSort[i]} -> ${namesToSort[i + 1]} <br>`;
   }
 }
