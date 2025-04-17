@@ -9,7 +9,7 @@ function friendsToSortOut() {
     return alert("Por favor, adicione um amigo!");
   } else {
     namesToSort.push(friendName.value);
-    friendsList.textContent = namesToSort;
+    friendsList.textContent = namesToSort.join(", ");
     friendName.value = "";
   }
 }
